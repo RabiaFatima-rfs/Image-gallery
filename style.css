@@ -1,0 +1,165 @@
+body {
+  font-family: cursive;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* Optional: Background color */
+}
+
+header {
+  background-color: #DEAA79;
+  color: rgb(0, 0, 0);
+  padding: 10px 0;
+  text-align: center;
+}
+
+header .header-content h1 {
+  margin: 0;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 10px;
+  justify-content: center; /* This will center the images in the container */
+  padding: 20px;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border-radius: 8px;  /* Optional: Rounded corners */
+}
+
+/* Hover effect */
+.gallery-item:hover {
+  transform: scale(0.8);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain; /* Ensures the image fits within the modal without distortion */
+  border-radius: 12px;  /* Optional: Rounded corners */
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+footer {
+  background-color: #DEAA79;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller images on smaller screens */
+  }
+
+  .gallery-item {
+    height: 120px; /* Adjust image size for small screens */
+  }
+
+  .modal img {
+    max-width: 85%; /* Slightly smaller modal image */
+  }
+
+  button {
+    padding: 8px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Even smaller columns */
+  }
+
+  .gallery-item {
+    height: 100px; /* Adjust image size further for very small screens */
+  }
+
+  .modal img {
+    max-width: 80%; /* Adjust modal image size */
+  }
+
+  button {
+    padding: 6px;
+    font-size: 18px;
+  }
+}
