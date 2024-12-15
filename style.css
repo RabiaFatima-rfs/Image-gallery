@@ -1,165 +1,448 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
 body {
-  font-family: cursive;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0; /* Optional: Background color */
+    background: #FFE6A9;
 }
 
-header {
-  background-color: #DEAA79;
-  color: rgb(0, 0, 0);
-  padding: 10px 0;
-  text-align: center;
+/* Header */
+.header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 12%;
+    background:#DEAA79;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 }
 
-header .header-content h1 {
-  margin: 0;
+.logo {
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    transition: 0.3s ease;
 }
 
-header nav ul {
-  list-style: none;
-  padding: 0;
+.logo:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 25px whitesmoke, 0 0 50px whitesmoke;
+    transform: scale(1.1);
+}
+span{
+    color: rgb(0, 0, 0);
+
 }
 
-header nav ul li {
-  display: inline;
-  margin: 0 15px;
+.navbar a {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
 }
 
-header nav ul li a {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
+.navbar a:hover,
+.navbar a.active {
+    color: white;
+    border-bottom: 3px solid white;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
-  gap: 10px;
-  justify-content: center; /* This will center the images in the container */
-  padding: 20px;
+.contact {
+    padding: 8px 20px; 
+    background-color: white;
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
 }
 
-.gallery-item {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  cursor: pointer;
-  transition: transform 0.3s;
-  border-radius: 8px;  /* Optional: Rounded corners */
+.contact:hover {
+    background-color:#DEAA79;
+    box-shadow: 0 0 25px rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
-/* Hover effect */
-.gallery-item:hover {
-  transform: scale(0.8);
+/* Home Section */
+.home {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligns text and image to the sides */
+    padding: 30px 12% 0;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+.home-content {
+    max-width: 600px; /* Ensures the text content stays on the left */
 }
 
-.modal img {
-  max-width: 90%;
-  max-height: 80%;
-  object-fit: contain; /* Ensures the image fits within the modal without distortion */
-  border-radius: 12px;  /* Optional: Rounded corners */
+.home-content h3 {
+    font-size: 42px;
 }
 
-.close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 36px;
-  color: white;
-  cursor: pointer;
-  z-index: 1001;
+.home-content h1 {
+    font-size: 62px;
+    line-height: 1.2;
 }
 
-button {
-  position: absolute;
-  top: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 24px;
-  transform: translateY(-50%);
-  z-index: 1001;
+.home-content p {
+    font-size: 18px;
+    margin: 25px 0 30px;
 }
 
-.prev {
-  left: 10px;
+.btn-box {
+    width: 345px;
+    display: flex;
+    gap: 2em;
 }
 
-.next {
-  right: 10px;
+.btn-1 {
+    padding: 15px 28px;
+    background-color:#DEAA79;
+    color: rgb(255, 252, 252);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
 }
 
-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.btn-1:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
 }
 
-footer {
-  background-color: #DEAA79;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  padding: 20px 0;
+.img-box {
+    width: 350px;
+    height: 350px; /* Ensure the image container is square for a perfect circle */
+    border-radius: 50%; /* This creates the circular shape */
+    overflow: hidden; /* Ensures that the image is contained within the circle */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9); /* Adds a shadow effect */
 }
 
-footer a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire area of the circle */
+    border-radius: 50%; /* Ensures the image is also in a circular shape */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  header {
-    padding: 15px 0;
-  }
 
-  .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller images on smaller screens */
-  }
+/* About Section */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12% 8%;
+    gap: 10em;
+}
 
-  .gallery-item {
-    height: 120px; /* Adjust image size for small screens */
-  }
+.about-img img {
+    width: 400px; /* Reduced the width from 550px to 400px */
+    box-shadow: 0 0 25px rgb(10, 10, 10), 0 0 50px black;
+}
 
-  .modal img {
-    max-width: 85%; /* Slightly smaller modal image */
-  }
+.about-content h2 {
+    text-align: left;
+    color: white;
+    font-size: 42px;
+}
 
-  button {
-    padding: 8px;
+.about-content h3 {
+    font-size: 62px;
+    color: white;
+}
+
+.about-content p {
+    color: rgb(3, 3, 3);
     font-size: 20px;
-  }
+    margin-top: 2em 0 3em;
+}
+
+/* Project Section */
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #FFE6A9;
+    padding: 0 5%;  
+}
+
+.project {
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0; /* Reduced margin to make the gap between projects smaller */
+    padding: 10px; /* Adjusted padding inside each project */
+    width: calc(33.33% - 10px); /* Reduced width for tighter layout */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.project:hover{
+    transition: 0.3s ease;
+    transform: scale(1.05);
+
+}
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.project h2 {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    }
+
+/* Education Section */
+.education-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFE6A9;
+}
+
+.education {
+    background:#FFE6A9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.education h2 {
+    font-size: 1.5em;
+}
+
+.education p {
+    font-size: 16px;
+}
+
+/* Contact Form */
+.contact-form h2 {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 30px;
+}
+
+.contact-form form {
+    max-width: 40em;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.contact-form form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-form form .input-box input,
+.contact-form form textarea {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 14px;
+    color: #DEAA79;
+    background: rgb(238, 241, 241);
+    border-radius: .9rem;
+    margin: 0.5rem 0;
+    resize: none;
+}
+.container {
+    color: rgb(54, 54, 54);
+    font-size: 1.7em;
+    font-weight: bold;
+    text-align: center;
+}
+h2 span{
+   
+    color:  rgb(54, 54, 54); /* Set text color to orange */
+    font-size: 1.5em; /* Increase font size */
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: #DEAA79;
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: white;
+}
+
+.footer .social a {
+    font-size: 24px;
+    color: white;
+    border: 2px solid #FFE6A9;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    box-shadow: inset 0 0 10px#FFE6A9;
+    transition: 0.3s ease;
+}
+
+.footer .social a:hover {
+    transform: scale(1.2) translateY(-10px);
+    color: #FFE6A9
+    border: 2px solid #FFE6A9;
+}
+
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.footer ul li a:hover {
+    border-bottom: 3px solid #FFE6A9;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .header {
+        padding: 35px 10%;
+    }
+
+    .home-content h1 {
+        font-size: 50px;
+    }
+
+    .project {
+        width: calc(45% - 20px);
+    }
+
+    .about {
+        flex-direction: column;
+        padding: 10%;
+        gap: 3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 5%;
+    }
+
+    .home-content h1 {
+        font-size: 40px;
+    }
+
+    .home {
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .project {
+        width: calc(100% - 20px);
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .about {
+        padding: 8%;
+        gap: 2em;
+    }
+
+    .contact-form form .input-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
 @media (max-width: 480px) {
-  .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Even smaller columns */
-  }
+    .header {
+        padding: 15px 5%;
+    }
 
-  .gallery-item {
-    height: 100px; /* Adjust image size further for very small screens */
-  }
+    .logo {
+        font-size: 20px;
+    }
 
-  .modal img {
-    max-width: 80%; /* Adjust modal image size */
-  }
+    .navbar a {
+        font-size: 14px;
+        margin: 0 10px;
+    }
 
-  button {
-    padding: 6px;
-    font-size: 18px;
-  }
+    .btn-1 {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .home-content h1 {
+        font-size: 35px;
+    }
+
+    .home-content p {
+        font-size: 16px;
+    }
+
+    .project {
+        width: calc(100% - 20px);
+    }
+
+    .footer .social a {
+        font-size: 20px;
+        width: 30px;
+        height: 30px;
+        line-height: 28px;
+    }
+
+    .footer ul li {
+        display: block;
+        padding: 10px 0;
+    }
 }
